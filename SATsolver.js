@@ -9,7 +9,7 @@ function nextAssignment(assignment) {
         if (assignment[a]) {
             // vai um
         } else {
-            aux = true       // somando sempre 1 nos binarios garante que estamos testando todas as possibilidades
+            aux = true       // somando sempre 1 nos binarios garante que testamos todas as possibilidades
         }
         assignment[a] = !assignment[a]
     }
@@ -76,11 +76,8 @@ function readClauses(text) {
         }
     }
     let X = aux.join()
-    for (let a = 0; a < X.length; a++) {
-        if (X.charAt(a) == " " && X.charAt(a + 1) == " ") { // checar se possui espacos entre as variaveis
-            X.slice(a, a + 1)
-        }
-    }
+    X = X.replace(/\s+/g,' ') // elimina espacos
+    X = X.replace(/, /g, ',')
     aux = X.split(",")
     for (let a = 0; a < aux.length; a++) {
         aux[a] = aux[a].split(" ") // transforma cada clausula em um array contendo as variaveis
