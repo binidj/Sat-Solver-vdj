@@ -1,0 +1,6 @@
+var X = require('./SATsolver')
+var Y = ('./hole6.cnf')
+const t1 = console.time()
+var R = X.solve(Y)
+console.log(R)
+console.log(console.timeEnd() - t1)
